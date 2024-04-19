@@ -2,28 +2,29 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1 class="mb-4">Hello, world!</h1>
+<h1 class="mb-4">Quick reference to Circle of Influence!</h1>
+<p>Based on the highly influential book "The 7 habits of highly effective people"</p>
 
 <div class="form-group">
-    <label for="concern">What are you concerned about?</label>
+    <h3 for="concern">What are you concerned about?</h3>
     <textarea id="concern" class="form-control" @bind="concernText"></textarea>
 </div>
-
-<div class="form-group">
-    <p>Can you control it?</p>
-    <button class="btn @(hasControl ? "btn-success" : "btn-danger")" @onclick="ToggleControl">@controlText</button>
+<div class="form-group d-flex justify-content-between mb-4 mt-2 maxWidth"> 
+    <h3>Can you influence it?</h3>
+    <button class="btn @(hasInfluence ? "btn-success" : "btn-danger")" @onclick="ToggleInfluence">@influenceText</button>
 </div>
 
-<div class="form-group"> 
-    <p>Can you influence it?</p>
-    <button class="btn @(hasInfluence ? "btn-success" : "btn-danger")" @onclick="ToggleInfluence">@influenceText</button>
+<div class="form-group d-flex justify-content-between mb-4 maxWidth">
+    <h3>Can you control it?</h3>
+    <button class="btn @(hasControl ? "btn-success" : "btn-danger")" @onclick="ToggleControl">@controlText</button>
 </div>
 
 @if (!string.IsNullOrWhiteSpace(concernText))
 {
     <div>
         <h2>@positionCircleOfInfluence</h2>
-        <a href="https://positivepsychology.com/circles-of-influence/">Visit PositivePsychology for more information about the Circle of influence</a>
+        <p>@explanation</p> 
+        <p>Source: <a href="https://positivepsychology.com/circles-of-influence/">Visit PositivePsychology for more information about the Circle of influence</a></p>
     </div>
 }
 
@@ -34,8 +35,8 @@
 
     private string influenceText => hasInfluence ? "Yes" : "No";
     private string controlText => hasControl ? "Yes" : "No";
-
     private string positionCircleOfInfluence = "You are in the Circle of Concern";
+    private string explanation = "The circle of concern. This circle encompasses a broader range of external factors, challenges, and circumstances that we may care about but which are clearly beyond our control.";
 
     private void ToggleInfluence()
     {
@@ -54,12 +55,15 @@
 
         if(hasControl){
             positionCircleOfInfluence = "You are in the Circle of Control";
+            explanation = "Circle of control, representing aspects of our life over which we have direct control. It is the sphere in which we can effect change. The circle of control symbolizes the areas where we can take meaningful action and make a positive difference.";
         } 
         else if(hasInfluence){
             positionCircleOfInfluence = "You are in the Circle of Influence";
+            explanation = "The circle of influence, representing the intersection of factors within our immediate control and those that fall outside of our area of control.";
         }
         else {
             positionCircleOfInfluence = "You are in the Circle of Concern";
+            explanation = "The circle of concern. This circle encompasses a broader range of external factors, challenges, and circumstances that we may care about but which are clearly beyond our control.";
         }
     }
 }
