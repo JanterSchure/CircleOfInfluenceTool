@@ -11,13 +11,25 @@
 </div>
 <div class="form-group d-flex justify-content-between mb-4 mt-2 maxWidth"> 
     <h3>Can you influence it?</h3>
-    <button class="btn @(hasInfluence ? "btn-success" : "btn-danger")" @onclick="ToggleInfluence">@influenceText</button>
-</div>
+    <button class="btn @(hasInfluence ? "btn-success" : "btn-danger")" @onclick="ToggleInfluence">@influenceButtonText</button>
 
+</div>
+@if(hasInfluence && !hasControl){
+    <div class="form-group mb-4">
+        <h4 for="concern">What can you do to influence it?</h4>
+        <textarea id="concern" class="form-control" @bind="influenceText"></textarea>
+    </div>
+}
 <div class="form-group d-flex justify-content-between mb-4 maxWidth">
     <h3>Can you control it?</h3>
-    <button class="btn @(hasControl ? "btn-success" : "btn-danger")" @onclick="ToggleControl">@controlText</button>
+    <button class="btn @(hasControl ? "btn-success" : "btn-danger")" @onclick="ToggleControl">@controlButtonText</button>
 </div>
+    @if(hasControl){
+        <div class="form-group mb-4">
+            <h4 for="concern">What can you do to control it?</h4>
+            <textarea id="concern" class="form-control" @bind="controlText"></textarea>
+        </div>
+    }
 
 @if (!string.IsNullOrWhiteSpace(concernText))
 {
@@ -32,9 +44,12 @@
     private bool hasInfluence = false;
     private bool hasControl = false;
     private string concernText = string.Empty;
+    private string influenceText = string.Empty;
+    private string controlText = string.Empty;
 
-    private string influenceText => hasInfluence ? "Yes" : "No";
-    private string controlText => hasControl ? "Yes" : "No";
+    private string influenceButtonText => hasInfluence ? "Yes" : "No";
+    private string controlButtonText => hasControl ? "Yes" : "No";
+
     private string positionCircleOfInfluence = "You are in the Circle of Concern";
     private string explanation = "The circle of concern. This circle encompasses a broader range of external factors, challenges, and circumstances that we may care about but which are clearly beyond our control.";
 
