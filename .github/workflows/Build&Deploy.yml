@@ -32,7 +32,7 @@ jobs:
       run: dotnet publish CircleOfInfluenceTool.csproj -c release -o release
     # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to CircleOfInfluenceTool
-      run: sed -i 's/<base href="\/" \/>/<base href="\/CircleOfInfluenceTool\/" \/>/g' /release/wwwroot/index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/CircleOfInfluenceTool\/" \/>/g' release/wwwroot/index.html
       # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Add .nojekyll file
       run: touch CircleOfInfluenceTool/release/wwwroot/.nojekyll
