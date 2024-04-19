@@ -14,7 +14,7 @@
     <button class="btn @(hasInfluence ? "btn-success" : "btn-danger")" @onclick="ToggleInfluence">@influenceButtonText</button>
 
 </div>
-@if(hasInfluence && !hasControl){
+@if(hasInfluence){
     <div class="form-group mb-4">
         <h4 for="concern">What can you do to influence it?</h4>
         <textarea id="concern" class="form-control" @bind="influenceText"></textarea>
