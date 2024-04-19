@@ -36,13 +36,7 @@ jobs:
       working-directory: ./CircleOfInfluenceTool
     # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to CircleOfInfluenceTool
-      run: sed -i 's/<base href="\/" \/>/<base href="\/CircleOfInfluenceTool\/" \/>/g' CircleOfInfluenceTool/release/wwwroot/index.html
-    - name: Change app.css path in index.html
-      run: sed -i 's/<link rel="stylesheet" href="css\/app.css" \/>/<link rel="stylesheet" href="\/CircleOfInfluenceTool\/css\/app.css" \/>/g' CircleOfInfluenceTool/release/wwwroot/index.html
-    - name: Change CircleOfInfluenceTool.styles.css path in index.html
-      run: sed -i 's/<link href="CircleOfInfluenceTool.styles.css" rel="stylesheet" \/>/<link href="\/CircleOfInfluenceTool\/CircleOfInfluenceTool.styles.css" rel="stylesheet" \/>/g' CircleOfInfluenceTool/release/wwwroot/index.html
-    - name: Change _framework/blazor.webassembly.js path in index.html
-      run: sed -i 's/<script src="_framework\/blazor.webassembly.js"><\/script>/<script src="\/CircleOfInfluenceTool\/_framework\/blazor.webassembly.js"><\/script>/g' CircleOfInfluenceTool/release/wwwroot/index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/CircleOfInfluenceTool\/" \/>/g' /release/wwwroot/index.html
       # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Add .nojekyll file
       run: touch CircleOfInfluenceTool/release/wwwroot/.nojekyll
