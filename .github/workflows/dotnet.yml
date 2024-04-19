@@ -21,10 +21,14 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore CircelOfInfluenceTool.csproj
+      run: dotnet restore CircleOfInfluenceTool.csproj
+      working-directory: ./CircleOfInfluenceTool
     - name: Build
-      run: dotnet build CircelOfInfluenceTool.csproj --no-restore
+      run: dotnet build CircleOfInfluenceTool.csproj --no-restore
+      working-directory: ./CircleOfInfluenceTool
     - name: Test
-      run: dotnet test CircelOfInfluenceTool.csproj --no-build --verbosity normal
+      run: dotnet test CircleOfInfluenceTool.csproj --no-build --verbosity normal
+      working-directory: ./CircleOfInfluenceTool
     - name: Publish
-      run: dotnet publish CircelOfInfluenceTool.csproj -c release -o release
+      run: dotnet publish CircleOfInfluenceTool.csproj -c release -o release
+      working-directory: ./CircleOfInfluenceTool
