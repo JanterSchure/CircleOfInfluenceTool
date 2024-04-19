@@ -39,7 +39,7 @@ jobs:
       run: sed -i 's/<base href="\/" \/>/<base href="\/CircleOfInfluenceTool\/" \/>/g' CircleOfInfluenceTool/release/wwwroot/index.html
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Add .nojekyll file
-      run: touch release/wwwroot/.nojekyll
+      run: touch CircleOfInfluenceTool/release/wwwroot/.nojekyll
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.6.0
       with:
