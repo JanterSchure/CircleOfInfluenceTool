@@ -24,16 +24,12 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore CircleOfInfluenceTool.csproj
-      working-directory: ./CircleOfInfluenceTool
     - name: Build
       run: dotnet build CircleOfInfluenceTool.csproj --no-restore
-      working-directory: ./CircleOfInfluenceTool
     - name: Test
       run: dotnet test CircleOfInfluenceTool.csproj --no-build --verbosity normal
-      working-directory: ./CircleOfInfluenceTool
     - name: Publish
       run: dotnet publish CircleOfInfluenceTool.csproj -c release -o release
-      working-directory: ./CircleOfInfluenceTool
     # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to CircleOfInfluenceTool
       run: sed -i 's/<base href="\/" \/>/<base href="\/CircleOfInfluenceTool\/" \/>/g' /release/wwwroot/index.html
