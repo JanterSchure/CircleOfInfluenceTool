@@ -2,6 +2,64 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1 class="mb-4">Hello, world!</h1>
 
-Welcome to your new app.
+<div class="form-group">
+    <label for="concern">What are you concerned about?</label>
+    <textarea id="concern" class="form-control" @bind="concernText"></textarea>
+</div>
+
+<div class="form-group">
+    <p>Can you control it?</p>
+    <button class="btn @(hasControl ? "btn-success" : "btn-danger")" @onclick="ToggleControl">@controlText</button>
+</div>
+
+<div class="form-group">
+    <p>Can you influence it?</p>
+    <button class="btn @(hasInfluence ? "btn-success" : "btn-danger")" @onclick="ToggleInfluence">@influenceText</button>
+</div>
+
+@if (!string.IsNullOrWhiteSpace(concernText))
+{
+    <div>
+        <h2>@positionCircleOfInfluence</h2>
+        <a href="https://positivepsychology.com/circles-of-influence/">Visit PositivePsychology for more information about the Circle of influence</a>
+    </div>
+}
+
+@code {
+    private bool hasInfluence = false;
+    private bool hasControl = false;
+    private string concernText = string.Empty;
+
+    private string influenceText => hasInfluence ? "Yes" : "No";
+    private string controlText => hasControl ? "Yes" : "No";
+
+    private string positionCircleOfInfluence = "You are in the Circle of Concern";
+
+    private void ToggleInfluence()
+    {
+        hasInfluence = !hasInfluence;
+        ChangePositionCircleOfInfluence();
+    }
+
+    private void ToggleControl()
+    {
+        hasControl = !hasControl;
+        ChangePositionCircleOfInfluence();
+    }
+
+    private void ChangePositionCircleOfInfluence()
+    {
+
+        if(hasControl){
+            positionCircleOfInfluence = "You are in the Circle of Control";
+        } 
+        else if(hasInfluence){
+            positionCircleOfInfluence = "You are in the Circle of Influence";
+        }
+        else {
+            positionCircleOfInfluence = "You are in the Circle of Concern";
+        }
+    }
+}
