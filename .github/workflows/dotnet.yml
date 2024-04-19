@@ -22,13 +22,9 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: /CircleOfInfluenceTool
     - name: Build
-      run: dotnet build --no-restore
-      working-directory: /CircleOfInfluenceTool
+      run: dotnet build CircelOfInfluenceTool.csproj --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
-      working-directory: /CircleOfInfluenceTool
+      run: dotnet test CircelOfInfluenceTool.csproj --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish -c release -o ./docs
-      working-directory: /CircleOfInfluenceTool
+      run: dotnet publish CircelOfInfluenceTool.csproj -c release -o release
