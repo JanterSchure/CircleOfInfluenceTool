@@ -37,6 +37,9 @@ jobs:
     # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to CircleOfInfluenceTool
       run: sed -i 's/<base href="\/" \/>/<base href="\/CircleOfInfluenceTool\/" \/>/g' CircleOfInfluenceTool/release/wwwroot/index.html
+      # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory for app css
+    - name: Change base-tag in index.html from / to CircleOfInfluenceTool
+      run: sed -i s/<link rel="stylesheet" href="css\/app.css" \/>/<link rel="stylesheet" href="CircleOfInfluenceTool\/css\/app.css" \/>/g' CircleOfInfluenceTool/release/wwwroot/index.html
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Add .nojekyll file
       run: touch CircleOfInfluenceTool/release/wwwroot/.nojekyll
