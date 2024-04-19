@@ -32,3 +32,12 @@ jobs:
     - name: Publish
       run: dotnet publish CircleOfInfluenceTool.csproj -c release -o release
       working-directory: ./CircleOfInfluenceTool
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.6.0
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: CircleOfInfluenceTool/release
+        CLEAN: true
+
