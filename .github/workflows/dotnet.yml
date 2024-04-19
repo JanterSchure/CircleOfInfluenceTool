@@ -38,6 +38,6 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: CircleOfInfluenceTool/release
+        FOLDER: CircleOfInfluenceTool/release/wwwroot
         CLEAN: true
 
