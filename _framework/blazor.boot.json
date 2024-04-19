@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CircleOfInfluenceTool",
   "resources": {
-    "hash": "sha256-JgF4vfYIxoVaV+2m30ZD23qYiN6hjYhmYjJ5/e/y6AU=",
+    "hash": "sha256-iUfzhbV+YH6JDJF9VMzzprFc8OoCidq9IO7FR3Jr+8I=",
     "jsModuleNative": {
       "dotnet.native.8.0.4.6vlmefabfv.js": "sha256-ju0+XWE0ihz554eKEj0HQ8Opa61xpbUIaX5/MNo8we4="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "CircleOfInfluenceTool.wasm": "sha256-j+tYkYo7jS2ppElQADmDuuWmRaOYXM2C0iLxd9OdDgg=",
+      "CircleOfInfluenceTool.wasm": "sha256-Qy2peai0WKN5+AOoBiJLWhUbk1rHEFeUvkuJDoxh6rw=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-jlLPXo+B6kvZJENnja4NzhXqLK6epFc2HTL04v9LvV0=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-7KkqwwQtcN+NHevIKYhJ2gLZJa3f0aShCl2ldtegyXw=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-jrdFRjrF1131MZ3HGQVsI3dX8cLdZvPz85lsBltxjSM=",
