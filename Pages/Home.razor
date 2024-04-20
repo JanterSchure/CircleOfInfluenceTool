@@ -38,17 +38,18 @@
         <p>@explanation</p> 
         <p>Source: <a href="https://positivepsychology.com/circles-of-influence/">Visit PositivePsychology for more information about the Circle of influence</a></p>
     </div>
-    
-<div class="circle big custom-border @(!hasInfluence && !hasControl ? "" : "big-light")">
+
+<div class="circle big custom-border @(hasInfluence && hasControl ? "" : "big-light")">
     <p class="circle-text circle-text-big">Concern</p>
+    
     <div class="circle medium @(hasInfluence && !hasControl ? "" : "medium-light")">
         <p class="circle-text circle-text-medium">Influence</p>
+        
         <div class="circle small @(hasControl ? "" : "small-light")">
             <p class="circle-text">Control</p>
         </div>
     </div>
 </div>
-}
 
 
 @code {
